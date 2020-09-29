@@ -1,0 +1,78 @@
+<div class="jumbotron jumbotron-fluid" style="background-color: darkorange; color:antiquewhite">
+    <div class="container row justify-content-center">
+        <h1 class="display-4 col-md-6 offset-md-6">Burger Master</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="col-md-6 offset-md-5">Burgers To Eat:</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ol class="col-md-6 offset-md-5">
+                {{#each burgers}}
+                {{#unless eaten}}
+                {{> burgers/burger-block eaten=false}}
+                {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="col-md-6 offset-md-5">Burgers Consumed</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ol class="col-md-6 offset-md-5">
+                {{#each burgers}}
+                {{#unless eaten}}
+                {{> burgers/burger-block eaten=true}}
+                {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="col-md-6 offset-md-4 create-form">
+                <div class="col-md-6 offset-md-1 form-group">
+                    <input type="text" id="bu" name="name">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="col-md-1.5 offset-md-5">Add Burger</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="col-md-6 offset-md-3">Add a burger above that you wish to eat</h3>
+        </div>
+    </div>
+</div>
