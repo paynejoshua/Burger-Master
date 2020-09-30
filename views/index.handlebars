@@ -39,9 +39,9 @@
         <div class="col">
             <ol class="col-md-6 offset-md-5">
                 {{#each burgers}}
-                {{#unless eaten}}
+                {{#if.unless eaten}}
                 {{> burgers/burger-block eaten=true}}
-                {{/unless}}
+                {{/if.unless}}
                 {{/each}}
             </ol>
         </div>
@@ -55,19 +55,13 @@
             <form class="col-md-6 offset-md-4 create-form">
                 <div class="col-md-6 offset-md-1 form-group">
                     <input type="text" id="bu" name="name">
+                    <button type="submit" id="submit" class="col-md-1.5 offset-md-5">Add Burger</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <button type="submit" class="col-md-1.5 offset-md-5">Add Burger</button>
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <div class="row">
