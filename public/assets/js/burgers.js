@@ -1,18 +1,17 @@
 $(function () {
     $(".eaten").on("click", function (event) {
         let id = $(this).data("id");
-        let newEaten = $(this).data("neweaten");
-
-        let newEatenState = {
-            eaten: newEaten
+        let newEat = $(this).data("neweat")
+        let newEatState = {
+            eaten: newEat
         };
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: newEatenState
+            data: newEatState
         }).then(
             function () {
-                console.log("changed eaten to", newEaten);
+                console.log("changed eaten to", newEat);
                 location.reload();
             }
         );

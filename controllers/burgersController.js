@@ -26,13 +26,13 @@ burger.create([
 });
 });
 
-router.put("/api/burger/:id", function(req, res){
-    let condition = "id" + req.params.id;
+router.put("/api/burgers/:id", function(req, res){
+    let condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
     burger.update({
-        eaten: req.body.eaten
+        eaten: true
     }, condition, function(result){
         if(result.changedRows == 0) {
             return res.status(404).end();
